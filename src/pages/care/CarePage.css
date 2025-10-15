@@ -1,0 +1,244 @@
+/* ======================  PASTIBOT 2.0  —  CUIDADOR  ======================
+   Fondo con gradiente limpio, burbujas suaves y compatibilidad con modo oscuro.
+==========================================================================*/
+
+/* 🌈 Paleta por defecto */
+:root {
+  --primary: #0288d1;
+  --primary-2: #03a9f4;
+  --bg: #ffffff;
+  --text: #1d1d1d;
+  --muted: #6b6b6b;
+  --card-bg: #ffffff;
+  --card-shadow: 0 10px 22px rgba(2, 136, 209, 0.12);
+  --ring: rgba(2,136,209,0.2);
+}
+
+/* 🌙 Modo oscuro */
+body[data-theme="dark"] {
+  --primary: #02a8ff;
+  --primary-2: #1e88e5;
+  --bg: #0f172a;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --card-bg: #111827;
+  --card-shadow: 0 12px 24px rgba(2, 136, 209, 0.25);
+  --ring: rgba(2,136,209,0.28);
+}
+
+/* =================== Estructura general =================== */
+.care-page {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  background: linear-gradient(to bottom, #fafdff 0%, #eaf6ff 40%, #ffffff 100%);
+  color: var(--text);
+  font-family: "Poppins", "Segoe UI", system-ui, sans-serif;
+  transition: background 0.4s ease;
+}
+
+/* 📦 Contenedor principal */
+.care-container {
+  position: relative;
+  z-index: 5;
+  width: 92%;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 8vh 0 12vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 🧭 Títulos y subtítulos */
+.care-title {
+  font-size: 2rem;
+  color: var(--primary);
+  font-weight: 800;
+  letter-spacing: .2px;
+  margin: 12px 0 6px;
+  text-align: center;
+}
+.care-subtitle {
+  color: var(--muted);
+  margin-bottom: 20px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* 🧩 Tarjetas */
+.care-card {
+  width: 100%;
+  background: var(--card-bg);
+  border-radius: 18px;
+  box-shadow: var(--card-shadow);
+  padding: 24px 26px;
+  margin: 12px 0;
+  animation: fadeInUp .6s ease both;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.care-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 30px var(--ring);
+}
+.care-card h3 {
+  color: var(--primary);
+  margin-bottom: 8px;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+.care-card p {
+  margin: 4px 0;
+  color: var(--text);
+}
+
+/* 🔘 Botón */
+.care-btn {
+  background: linear-gradient(135deg, var(--primary-2), var(--primary));
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  padding: 12px 24px;
+  width: 100%;
+  max-width: 340px;
+  cursor: pointer;
+  margin: 10px 0 6px;
+  box-shadow: 0 10px 18px rgba(2,136,209,.22);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+.care-btn:hover { transform: scale(1.03); }
+.care-btn:active { transform: scale(.98); }
+
+/* =================== Burbujas suaves =================== */
+.care-bubble {
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #e6f4fe, #c8e9fd);
+  opacity: 0.4;
+  animation: floatDiag 14s ease-in-out infinite;
+  filter: blur(2px);
+}
+.care-bubble.b1 { width: 90px; height: 90px; left: 20px;  bottom: 16vh; animation-duration: 16s; }
+.care-bubble.b2 { width: 50px; height: 50px; right: 28px; bottom: 28vh; animation-duration: 12s; }
+.care-bubble.b3 { width: 40px; height: 40px; left: 40%;  top: 10vh;  animation-duration: 18s; opacity: .3; }
+
+@keyframes floatDiag {
+  0%   { transform: translate(0, 0) scale(1);     opacity: .45; }
+  25%  { transform: translate(12px, -14px) scale(1.02); }
+  50%  { transform: translate(-8px, 10px) scale(0.98);  opacity: .5; }
+  75%  { transform: translate(16px, -8px) scale(1.05);  opacity: .4; }
+  100% { transform: translate(0, 0) scale(1);           opacity: .45; }
+}
+
+/* ✨ Entrada suave */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(26px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =================== MODALES =================== */
+.med-modal,
+.invite-modal {
+  --height: auto;
+  --border-radius: 14px;
+  --box-shadow: 0 20px 38px rgba(2, 136, 209, 0.18);
+}
+.modal-inner { padding: 16px; }
+.modal-title {
+  color: var(--primary);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 8px;
+}
+.modal-subtitle {
+  color: var(--muted);
+  font-size: .95rem;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+/* Inputs */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin: 6px 0 10px;
+}
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+/* Días */
+.days-grid {
+  margin: 6px 0 12px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+.day-chip {
+  background: #e6f3ff;
+  color: #0b6aa8;
+  border-radius: 10px;
+  padding: 8px 0;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+}
+.day-chip.active {
+  background: linear-gradient(135deg, var(--primary-2), var(--primary));
+  color: white;
+}
+
+/* Modal footer */
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+.outline {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+/* QR botón */
+.qr-btn {
+  position: absolute;
+  right: 6px;
+  top: 4px;
+  z-index: 10;
+  --background: transparent !important;
+  --color: var(--primary);
+  font-weight: 700;
+}
+
+/* Emociones */
+.emotions {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 6px;
+}
+.emotion-card {
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: 14px 10px;
+  text-align: center;
+  box-shadow: var(--card-shadow);
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.emotion-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 28px var(--ring);
+}
+.emotion-card .emoji {
+  font-size: 26px;
+  display: block;
+  margin-bottom: 8px;
+}

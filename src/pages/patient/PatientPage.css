@@ -1,0 +1,130 @@
+:root {
+  --primary: #0288d1;
+  --primary-2: #03a9f4;
+  --bg: #ffffff;
+  --text: #1d1d1d;
+  --muted: #6b6b6b;
+  --card-bg: #ffffff;
+  --card-shadow: 0 10px 22px rgba(2, 136, 209, 0.12);
+  --ring: rgba(2,136,209,0.2);
+}
+
+body[data-theme="dark"] {
+  --primary: #02a8ff;
+  --primary-2: #1e88e5;
+  --bg: #0f172a;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --card-bg: #111827;
+  --card-shadow: 0 12px 24px rgba(2, 136, 209, 0.25);
+  --ring: rgba(2,136,209,0.28);
+}
+
+.patient-page {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  background: linear-gradient(to bottom, #fafdff 0%, #eaf6ff 40%, #ffffff 100%);
+  color: var(--text);
+  font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+/* contenedor principal */
+.patient-container {
+  position: relative;
+  z-index: 5;
+  width: 92%;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 8vh 0 12vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* títulos */
+.patient-title {
+  font-size: 2rem;
+  color: var(--primary);
+  font-weight: 800;
+  margin-bottom: 6px;
+  text-align: center;
+}
+.patient-subtitle {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* tarjetas */
+.patient-card {
+  background: var(--card-bg);
+  border-radius: 18px;
+  box-shadow: var(--card-shadow);
+  padding: 25px 30px;
+  width: 100%;
+  margin: 12px 0;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.6s ease both;
+}
+.patient-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px var(--ring);
+}
+.patient-card h3 {
+  color: var(--primary);
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.patient-card p {
+  color: var(--text);
+  font-size: 1rem;
+}
+
+/* botones */
+.patient-btn {
+  background: linear-gradient(135deg, var(--primary-2), var(--primary));
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 14px 26px;
+  width: 100%;
+  max-width: 300px;
+  cursor: pointer;
+  margin-top: 15px;
+  box-shadow: 0 6px 15px rgba(2, 136, 209, 0.25);
+  transition: all 0.3s ease;
+}
+.patient-btn:hover {
+  transform: scale(1.05);
+}
+
+/* burbujas */
+.patient-bubble {
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #e6f4fe, #c8e9fd);
+  opacity: 0.4;
+  animation: floatDiag 14s ease-in-out infinite;
+  filter: blur(2px);
+}
+.patient-bubble.b1 { width: 90px; height: 90px; left: 20px;  bottom: 16vh; animation-duration: 16s; }
+.patient-bubble.b2 { width: 50px; height: 50px; right: 28px; bottom: 28vh; animation-duration: 12s; }
+.patient-bubble.b3 { width: 40px; height: 40px; left: 40%;  top: 10vh;  animation-duration: 18s; opacity: .3; }
+
+@keyframes floatDiag {
+  0%   { transform: translate(0, 0) scale(1); opacity: .45; }
+  25%  { transform: translate(12px, -14px) scale(1.02); }
+  50%  { transform: translate(-8px, 10px) scale(0.98); opacity: .5; }
+  75%  { transform: translate(16px, -8px) scale(1.05); opacity: .4; }
+  100% { transform: translate(0, 0) scale(1); opacity: .45; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,151 @@
+/* Este es el Fondo general */
+.login-page {
+  --background: #ffffff !important;
+  position: relative;
+  font-family: "Segoe UI", sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Son los Contenedor centrado */
+.login-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  max-width: 380px;
+  text-align: center;
+  background: transparent;
+}
+
+/* Título */
+.title {
+  font-size: 2.8rem;
+  color: #0288d1;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #555;
+  margin-bottom: 25px;
+}
+
+/* Este son los Campos de entrada */
+.input {
+  --background: #f8f8f8;
+  --padding-start: 14px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  color: #333;
+}
+
+/* Este es el Enlace de olvido */
+.forgot {
+  display: block;
+  font-size: 0.9rem;
+  color: #0288d1;
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+
+/* Este es el Botón principal */
+.signin-btn {
+  --background: linear-gradient(45deg, #4fc3f7, #0288d1);
+  --color: white;
+  border-radius: 25px;
+  font-weight: 600;
+  height: 45px;
+  margin-bottom: 20px;
+}
+
+/*  Este es el Enlace de crear cuenta */
+.create {
+  font-size: 0.9rem;
+  color: #777;
+}
+.create a {
+  color: #0288d1;
+  text-decoration: none;
+}
+
+/* Estos son los Iconos sociales */
+.socials {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.socials svg {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  padding: 6px;
+  background-color: #e3f2fd;
+  color: #0288d1;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.socials svg:hover {
+  transform: scale(1.15);
+  background-color: #b3e5fc;
+}
+
+/* Esta es la decoracion de las curvas */
+.top-shape {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(135deg, #4fc3f7, #0288d1);
+  border-bottom-left-radius: 50% 40%;
+  border-bottom-right-radius: 50% 40%;
+  z-index: -1;
+}
+
+.bottom-shape {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(135deg, #4fc3f7, #81d4fa);
+  border-top-left-radius: 50% 40%;
+  border-top-right-radius: 50% 40%;
+  z-index: -1;
+}
+
+/*  Este es el apartado de ajustes Responsivos */
+@media (max-height: 700px) {
+  .login-container {
+    transform: translate(-50%, -45%);
+  }
+  .title {
+    font-size: 2.3rem;
+  }
+  .subtitle {
+    font-size: 0.95rem;
+  }
+  .input {
+    margin-bottom: 10px;
+  }
+  .signin-btn {
+    height: 40px;
+  }
+  .socials svg {
+    width: 28px;
+    height: 28px;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 400px) {
+  .login-container {
+    width: 90%;
+  }
+}
+
+

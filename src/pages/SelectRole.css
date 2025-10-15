@@ -1,0 +1,107 @@
+.selectrole-page {
+  --background: #ffffff;
+  position: relative;
+  font-family: "Segoe UI", sans-serif;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* 🔹 Contenedor central */
+.role-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  max-width: 400px;
+  text-align: center;
+  z-index: 2;
+}
+
+/* 🔹 Título y subtítulo */
+.title {
+  font-size: 2.3rem;
+  color: #0288d1;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #777;
+  margin-bottom: 25px;
+}
+
+/* 🔹 Tarjetas de rol */
+.role-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.role-card {
+  background: linear-gradient(135deg, #4fc3f7, #0288d1);
+  color: white;
+  border-radius: 20px;
+  padding: 25px 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.role-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.role-card h2 {
+  margin-top: 12px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+/* 🔹 Iconos */
+.role-icon {
+  font-size: 4rem;
+  color: white;
+}
+
+/* 🔷 Formas decorativas */
+.top-shape {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(135deg, #4fc3f7, #0288d1);
+  border-bottom-left-radius: 50% 40%;
+  border-bottom-right-radius: 50% 40%;
+  z-index: 1;
+}
+
+.bottom-shape {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(135deg, #4fc3f7, #81d4fa);
+  border-top-left-radius: 50% 40%;
+  border-top-right-radius: 50% 40%;
+  z-index: 1;
+}
+
+/* 📱 Responsive */
+@media (max-width: 400px) {
+  .role-container {
+    width: 90%;
+  }
+  .role-card {
+    padding: 20px;
+  }
+  .role-icon {
+    font-size: 3.3rem;
+  }
+}
