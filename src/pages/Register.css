@@ -48,6 +48,8 @@
   background: #f3f3f3;
   font-size: 1rem;
   outline: none;
+  caret-color: #0288d1;
+
 }
 
 /* Botón principal */
@@ -87,31 +89,42 @@
   font-size: 0.9rem;
 }
 
-/* Íconos sociales */
-.social-icons {
+/* 🌐 Íconos sociales estilo Login */
+.socials {
+  margin-top: 15px;
   display: flex;
   justify-content: center;
-  gap: 15px;
-  margin-top: 10px;
+  gap: 18px;
 }
 
-.icon {
-  font-size: 2rem;
-  cursor: pointer;
-  transition: transform 0.2s ease;
+.socials svg {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  padding: 6px;
+  background-color: #e3f2fd;
+  color: #0288d1;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.icon:hover {
+.socials svg:hover {
   transform: scale(1.15);
+  background-color: #b3e5fc;
 }
 
+/* Colores específicos */
 .facebook {
   color: #1877f2;
+}
+
+.twitter {
+  color: #1da1f2;
 }
 
 .google {
   color: #db4437;
 }
+
 
 /* Formas decorativas */
 .top-shape {

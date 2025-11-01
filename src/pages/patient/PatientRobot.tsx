@@ -9,7 +9,7 @@ const PatientRobot: React.FC = () => {
       <div className="patient-bubble b2"></div>
 
       <div className="patient-container">
-        <h1 className="patient-title">Mi robot 🤖</h1>
+        <h1 className="patient-title">Mi robot</h1>
         <p className="patient-subtitle">Controla tu dispensador</p>
 
         <div className="patient-card">

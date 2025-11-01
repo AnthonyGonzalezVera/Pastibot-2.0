@@ -15,22 +15,22 @@ const Login: React.FC = () => {
 
         {/* Contenido centrado */}
         <div className="login-container">
-          <h1 className="title">Hello</h1>
-          <p className="subtitle">Sign in to your account</p>
+          <h1 className="title">Hola</h1>
+          <p className="subtitle">Inicia sesión en tu cuenta</p>
 
           {/* Campos de entrada */}
-          <IonInput className="input" placeholder="Username" />
-          <IonInput className="input" type="password" placeholder="Password" />
+          <IonInput className="input" placeholder="Nombre de usuario" />
+          <IonInput className="input" type="password" placeholder="Constraseña" />
 
-          <a href="#" className="forgot">Forgot your password?</a>
+          <a href="#" className="forgot">¿Olvidaste tu contraseña?</a>
 
           {/* Botón principal */}
           <IonButton expand="block" className="signin-btn">
-            Sign In
+            Iniciar sesión
           </IonButton>
 
           <p className="create">
-            Don’t have an account? <a href="#">Create</a>
+            ¿No tienes una cuenta? <a href="#">Crear</a>
           </p>
 
           {/* Iconos sociales */}

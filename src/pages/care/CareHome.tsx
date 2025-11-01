@@ -16,7 +16,7 @@ const CareHome: React.FC = () => {
 
         <div className="care-card">
           <h3>Próxima toma</h3>
-          <p>💊 Paracetamol — Hoy 20:00</p>
+          <p>Paracetamol — Hoy 20:00</p>
         </div>
 
         <div className="care-card">

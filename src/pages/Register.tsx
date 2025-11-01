@@ -2,6 +2,8 @@ import React from "react";
 import { IonPage, IonContent } from "@ionic/react";
 import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import { FaSquareXTwitter } from "react-icons/fa6";
+
 import "./Register.css";
 
 const Register: React.FC = () => {
@@ -14,39 +16,41 @@ const Register: React.FC = () => {
 
         {/* Contenedor principal */}
         <div className="register-container">
-          <h1 className="title">Create Account</h1>
-          <p className="subtitle">Sign up to start using Pastibot</p>
+          <h1 className="title">Crear una cuenta</h1>
+          <p className="subtitle">Regístrate para empezar a usar Pastibot</p>
 
           <form className="register-form">
-            <input type="text" placeholder="Full Name" />
+            <input type="text" placeholder="Nombre completo" />
             <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-            <input type="password" placeholder="Confirm Password" />
+            <input type="password" placeholder="Constraseña" />
+            <input type="password" placeholder="Confirmar contraseña" />
             <button
               type="button"
               className="register-btn"
               onClick={() => (window.location.href = "/selectrole")}
             >
-              CREATE ACCOUNT
+              CREAR UNA CUENTA
             </button>
           </form>
 
           <p className="signin-text">
-            Already have an account?{" "}
+            ¿Ya tienes una cuenta?{" "}
             <span
               className="link"
               onClick={() => (window.location.href = "/login")}
             >
-              Sign in
+              Iniciar sesión
             </span>
           </p>
 
-          <div className="divider">Or sign up with</div>
+          <div className="divider">O regístrate con</div>
 
-          <div className="social-icons">
-            <FaFacebook className="icon facebook" />
-            <FcGoogle className="icon google" />
+          <div className="socials">
+            <FaFacebook className="social-icon facebook" />
+            <FaSquareXTwitter className="social-icon twitter" />
+            <FcGoogle className="social-icon google" />
           </div>
+
         </div>
       </IonContent>
     </IonPage>

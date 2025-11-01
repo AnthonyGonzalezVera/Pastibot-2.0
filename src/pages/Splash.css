@@ -1,32 +1,47 @@
 .splash-screen {
-  --background: white;
-  position: relative;
+  --background: #ffffff;
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-top: 0;
+  --padding-bottom: 0;
   height: 100vh;
   width: 100vw;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /*Evita scrolls o márgenes raros */
+  overflow: hidden;
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
-/* Este es el Centrado absoluto en ambos ejes */
+/*Forzamos el centrado también dentro del Shadow DOM */
+.splash-screen::part(scroll) {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  height: 100% !important;
+  overflow: hidden !important;
+}
+
+
 .logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); 
   width: 280px;
   height: auto;
-  animation: fadeIn 2s ease-in-out;
+  animation: fadeIn 2s ease-in-out both;
 }
 
-/* Esta es la Animación de entrada */
+/* Animación splash */
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0.5);
+    transform: scale(0.6);
   }
   100% {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+    transform: scale(1);
   }
 }

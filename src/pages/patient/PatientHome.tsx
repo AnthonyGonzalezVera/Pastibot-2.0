@@ -15,7 +15,7 @@ const PatientHome: React.FC = () => {
 
         <div className="patient-card">
           <h3>Próxima toma</h3>
-          <p>💊 Amoxicilina — 14:00 PM</p>
+          <p>Amoxicilina — 14:00 PM</p>
         </div>
 
         <div className="patient-card">
@@ -23,7 +23,7 @@ const PatientHome: React.FC = () => {
           <p>3 de 5 dosis completadas ✅</p>
         </div>
 
-        <button className="patient-btn">Tomar ahora 💊</button>
+        <button className="patient-btn">Tomar ahora</button>
       </div>
     </IonContent>
   );

@@ -1,4 +1,4 @@
-/* ----------- Barra principal ----------- */
+
 .care-tabbar {
   --background: #ffffff;
   height: 88px;
@@ -12,7 +12,7 @@
   z-index: 10;
 }
 
-/* ----------- Botones base ----------- */
+
 .care-tabbar ion-tab-button {
   position: relative;
   background: transparent;
@@ -20,14 +20,14 @@
   overflow: visible !important;
 }
 
-/* Iconos base */
+
 .care-tabbar ion-tab-button ion-icon {
   font-size: 26px;
   color: #666;
   transition: all 0.25s ease;
 }
 
-/* Texto base */
+
 .care-tabbar ion-tab-button ion-label {
   font-size: 13px;
   color: #666;
@@ -35,7 +35,7 @@
   transition: all 0.25s ease;
 }
 
-/* ----------- Efecto al seleccionar ----------- */
+
 .care-tabbar ion-tab-button.tab-selected ion-icon {
   color: #0288d1;
   transform: translateY(-8px);
@@ -46,12 +46,12 @@
   font-weight: 600;
 }
 
-/* ----------- Animación de “salto” uniforme ----------- */
+
 .care-tabbar ion-tab-button.tab-selected {
   transform: translateY(-4px);
 }
 
-/* ----------- Quitar ripple/efectos feos de Ionic ----------- */
+
 .care-tabbar ion-tab-button::part(native) {
   background: transparent !important;
   box-shadow: none !important;

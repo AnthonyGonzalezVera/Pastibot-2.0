@@ -10,7 +10,7 @@ const CareControl: React.FC = () => {
 
       <div className="care-container">
         <h1 className="care-title">
-          Control del robot <span role="img" aria-label="robot">🤖</span>
+          Control del robot <span role="img" aria-label="robot"></span>
         </h1>
         <p className="care-subtitle">Prueba servos, luces y ojos</p>
 

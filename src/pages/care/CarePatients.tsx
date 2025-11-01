@@ -47,7 +47,7 @@ const CarePatients: React.FC = () => {
 
       <div className="care-container">
         <h1 className="care-title">
-          Pacientes <span role="img" aria-label="people">👥</span>
+          Pacientes <span role="img" aria-label="people"></span>
         </h1>
         <p className="care-subtitle">Invita por WhatsApp o edita vínculos</p>
 

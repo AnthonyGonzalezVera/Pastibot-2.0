@@ -9,7 +9,7 @@ const PatientHistory: React.FC = () => {
       <div className="patient-bubble b2"></div>
 
       <div className="patient-container">
-        <h1 className="patient-title">Historial 🕓</h1>
+        <h1 className="patient-title">Historial</h1>
         <p className="patient-subtitle">Registro de tus medicaciones</p>
 
         <div className="patient-card">

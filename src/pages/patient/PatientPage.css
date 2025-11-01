@@ -116,6 +116,186 @@ body[data-theme="dark"] {
 .patient-bubble.b2 { width: 50px; height: 50px; right: 28px; bottom: 28vh; animation-duration: 12s; }
 .patient-bubble.b3 { width: 40px; height: 40px; left: 40%;  top: 10vh;  animation-duration: 18s; opacity: .3; }
 
+.profile-avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #0288d1;
+  margin-bottom: 10px;
+  cursor: pointer;
+  background-color: #f3f3f3;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(2, 136, 209, 0.25);
+}
+
+/* texto biografía */
+.profile-bio {
+  text-align: center;
+  margin: 10px auto 25px;
+  max-width: 300px;
+  font-size: 0.95rem;
+  color: #444;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  line-height: 1.4;
+}
+
+/* botón de WhatsApp */
+.patient-btn.whatsapp {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: #fff;
+}
+
+/* 🔹 Modo editar perfil del paciente */
+.edit-profile-card {
+  background: var(--card-bg);
+  border-radius: 18px;
+  box-shadow: var(--card-shadow);
+  padding: 25px 20px 35px;
+  width: 100%;
+  text-align: center;
+  animation: fadeInUp 0.6s ease both;
+}
+
+.edit-photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.patient-btn.small {
+  max-width: 150px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  margin: 5px auto;
+}
+
+.edit-form {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.edit-form label {
+  display: block;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 5px;
+}
+
+.edit-form input,
+.edit-form select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: #f4f6f8;
+  margin-bottom: 15px;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.edit-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+
+/* Grupo de formulario */
+.form-group {
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.input-label {
+  display: block;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 5px;
+}
+
+/* Contenedor visual */
+.select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.custom-select-display {
+  background: #f4f6f8;
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  color: var(--text);
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid transparent;
+  transition: border 0.2s ease;
+}
+
+.custom-select-display:hover {
+  border: 2px solid var(--primary);
+}
+
+.arrow {
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+/* Opciones desplegables */
+.custom-options {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  animation: fadeIn 0.15s ease forwards;
+}
+
+.option {
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.option:hover {
+  background: #e3f2fd;
+}
+
+.option.active {
+  background: #b3e5fc;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Botón especial de WhatsApp */
+.patient-btn.whatsapp {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: white;
+}
+.patient-btn.whatsapp:hover {
+  transform: scale(1.05);
+}
+
+
 @keyframes floatDiag {
   0%   { transform: translate(0, 0) scale(1); opacity: .45; }
   25%  { transform: translate(12px, -14px) scale(1.02); }

@@ -4,10 +4,8 @@ import "./Splash.css";
 
 const Splash: React.FC = () => {
   useEffect(() => {
-    const timer = setTimeout(() => {
-      window.location.href = "/login";
-    }, 4000);
-    return () => clearTimeout(timer);
+    const t = setTimeout(() => (window.location.href = "/login"), 4000);
+    return () => clearTimeout(t);
   }, []);
 
   return (

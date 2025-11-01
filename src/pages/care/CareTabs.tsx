@@ -8,13 +8,9 @@ import {
   IonLabel,
 } from "@ionic/react";
 import { Route, Redirect } from "react-router-dom";
-import {
-  homeOutline,
-  medkitOutline,
-  settingsOutline,
-  peopleOutline,
-  personCircleOutline,
-} from "ionicons/icons";
+
+import { homeOutline, medkitOutline, peopleOutline, personCircleOutline, rocketOutline } from "ionicons/icons";
+
 
 import CareHome from "./CareHome";
 import CareMedicines from "./CareMedicines";
@@ -50,11 +46,12 @@ const CareTabs: React.FC = () => {
           <IonLabel>Medicinas</IonLabel>
         </IonTabButton>
 
-        {/* Botón central importante */}
-        <IonTabButton tab="control" href="/care/control" className="tab-control">
-          <IonIcon icon={settingsOutline} />
-          <IonLabel>Control</IonLabel>
-        </IonTabButton>
+        {/* Botón central*/}
+       <IonTabButton tab="control" href="/care/control" className="tab-control">
+  <IonIcon icon={rocketOutline} />
+  <IonLabel>Control</IonLabel>
+</IonTabButton>
+
 
         <IonTabButton tab="patients" href="/care/patients">
           <IonIcon icon={peopleOutline} />

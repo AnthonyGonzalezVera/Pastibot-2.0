@@ -10,13 +10,15 @@ import {
   IonDatetime
 } from "@ionic/react";
 import "./CarePage.css";
+import { IoQrCodeOutline } from "react-icons/io5";
+
 
 type Med = {
   id: number;
   name: string;
   dosage: string;
-  time: string;    // HH:mm
-  days: string[];  // ["Lu", "Ma"...]
+  time: string;    
+  days: string[]; 
   stock?: number;
 };
 
@@ -56,7 +58,7 @@ const CareMedicines: React.FC = () => {
     };
     setMeds([newMed, ...meds]);
     setOpen(false);
-    // reset
+   
     setManualName(""); setManualDose("1 tableta"); setManualTime("08:00");
     setSelectedDays(["Lu","Ma","Mi","Ju","Vi"]); setLabel(""); setRepeat(true);
   };
@@ -72,11 +74,15 @@ const CareMedicines: React.FC = () => {
 
       <div className="care-container">
         <h1 className="care-title">
-          Medicamentos <span role="img" aria-label="pill">💊</span>
+          Medicamentos <span role="img" aria-label="pill"></span>
         </h1>
         <p className="care-subtitle">Gestiona y añade tus medicinas</p>
 
-        <IonButton className="qr-btn" onClick={handleQR}>📷 QR</IonButton>
+        <IonButton className="qr-btn" onClick={handleQR}>
+        <IoQrCodeOutline style={{ fontSize: "1.3rem", marginRight: "6px" }} />
+              
+        </IonButton>
+
 
         <button className="care-btn" onClick={() => setOpen(true)}>
           + Añadir medicamento
@@ -97,7 +103,7 @@ const CareMedicines: React.FC = () => {
         ))}
       </div>
 
-      {/* Modal para añadir manualmente */}
+      {/* Modal añadimos localmenteee */}
       <IonModal
         isOpen={open}
         onDidDismiss={() => setOpen(false)}
