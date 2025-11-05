@@ -1,0 +1,266 @@
+.medicines-list {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
+
+.medicine-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(2, 136, 209, 0.1);
+  padding: 18px 18px 20px;
+  margin: 14px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.medicine-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(2, 136, 209, 0.15);
+}
+
+.medicine-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.medicine-icon {
+  background: linear-gradient(135deg, #0288d1, #03a9f4);
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.medicine-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0288d1;
+}
+
+.medicine-body {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.medicine-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.medicine-info .icon {
+  color: #0288d1;
+  font-size: 1rem;
+}
+
+.medicine-dosage {
+  font-weight: 500;
+  color: #111;
+}
+
+.medicine-footer {
+  margin-top: 8px;
+}
+
+/* === BOTÓN DISPENSAR AHORA — estilo Pastibot azul === */
+.dispense-btn {
+  --background: linear-gradient(135deg, #03a9f4, #0288d1) !important;
+  --color: #ffffff !important;
+  font-weight: 600;
+  border-radius: 12px;
+  text-transform: none;
+  box-shadow: 0 6px 14px rgba(2, 136, 209, 0.3);
+}
+
+.dispense-btn:hover {
+  filter: brightness(1.05);
+  transform: scale(1.02);
+}
+
+.dispense-btn:active {
+  transform: scale(0.98);
+}
+/* Listado */
+.medicines-list {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
+
+.medicine-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(2, 136, 209, 0.1);
+  padding: 16px 16px 18px;
+  margin: 14px auto;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.medicine-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(2, 136, 209, 0.16);
+}
+
+/* Botón X (eliminar) */
+.card-close {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: none;
+  background: #f3f7fb;
+  color: #6b7a90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.card-close:hover {
+  background: #e9f4ff;
+  color: #0288d1;
+}
+
+/* Área clickeable para editar */
+.medicine-clickable {
+  cursor: pointer;
+  border-radius: 12px;
+  padding-right: 8px;
+}
+.medicine-clickable:active {
+  background: #f7fbff;
+}
+
+.medicine-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.medicine-icon {
+  background: linear-gradient(135deg, #0288d1, #03a9f4);
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.medicine-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0288d1;
+}
+
+.medicine-body { margin-top: 6px; }
+.medicine-info { display: flex; gap: 6px; align-items: center; color: #444; font-size: .92rem; }
+.medicine-info .icon { color: #0288d1; }
+
+/* Botón azul Pastibot */
+.medicine-footer { margin-top: 10px; }
+.dispense-btn {
+  --background: linear-gradient(135deg, #03a9f4, #0288d1) !important;
+  --color: #ffffff !important;
+  border-radius: 10px;
+  font-weight: 700;
+  box-shadow: 0 8px 18px rgba(2, 136, 209, 0.25);
+}
+/* ===== ALERTA PASTIBOT 2.0 ===== */
+.pastibot-alert-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.25s ease;
+}
+
+.pastibot-alert {
+  background: #ffffff;
+  width: 90%;
+  max-width: 340px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(2, 136, 209, 0.25);
+  text-align: center;
+  padding: 24px 20px 22px;
+  animation: scaleIn 0.25s ease;
+}
+
+.pastibot-alert h2 {
+  color: #0288d1;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.pastibot-alert p {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 22px;
+}
+
+.alert-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.alert-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.btn-cancel,
+.btn-delete {
+  flex: 1;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 0;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.btn-cancel {
+  background: #f3f7fb;
+  color: #444;
+}
+.btn-cancel:hover {
+  filter: brightness(1.05);
+}
+
+.btn-delete {
+  background: linear-gradient(135deg, #f44336, #e53935);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(244, 67, 54, 0.3);
+}
+.btn-delete:hover {
+  filter: brightness(1.05);
+  transform: scale(1.02);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
