@@ -163,3 +163,11 @@
     font-size: 1.8rem;
   }
 }
+
+.register-form input {
+  color: #000 !important;         /* ← texto negro */
+}
+
+.register-form input::placeholder {
+  color: #888 !important;         /* ← placeholder gris */
+}

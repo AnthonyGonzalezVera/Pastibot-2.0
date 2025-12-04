@@ -3,6 +3,7 @@ import { IonPage, IonContent, IonModal } from "@ionic/react";
 import { FaUserNurse } from "react-icons/fa";
 import { FaUser } from "react-icons/fa6";
 import { useHistory } from "react-router-dom";
+import api from "../api/axios"; // 👈 Asegúrate de tener esto
 import "./SelectRole.css";
 
 const SelectRole: React.FC = () => {
@@ -15,23 +16,49 @@ const SelectRole: React.FC = () => {
     setShowModal(true);
   };
 
-  const confirmRole = () => {
-    if (selectedRole === "care") {
-      history.push("/care/home");
-    } else if (selectedRole === "patient") {
-      history.push("/patient/home");
+  // ============================================================
+  // 🚀 GUARDAR EL ROL EN EL BACKEND
+  // ============================================================
+  const confirmRole = async () => {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      alert("No autorizado");
+      return;
     }
+
+    const backendRole =
+      selectedRole === "care" ? "CUIDADOR" : "PACIENTE";
+
+    try {
+      // Guardar el rol en la BD
+      await api.post(
+        "/auth/set-role",
+        { role: backendRole },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+
+      // Luego navegar
+      if (selectedRole === "care") {
+        history.push("/care/home");
+      } else {
+        history.push("/patient/home");
+      }
+
+    } catch (err) {
+      console.error(err);
+      alert("Error al guardar el rol");
+    }
+
     setShowModal(false);
   };
 
   return (
     <IonPage>
       <IonContent fullscreen className="selectrole-page">
-        {/* Fondo decorativo */}
         <div className="top-gradient"></div>
         <div className="bottom-gradient"></div>
 
-        {/* Contenido principal */}
         <div className="role-container">
           <h1 className="title">Elige tu Rol</h1>
           <p className="subtitle">Selecciona cómo quieres utilizar Pastibot</p>
@@ -51,7 +78,6 @@ const SelectRole: React.FC = () => {
           </div>
         </div>
 
-        {/* 🎨 Modal bonito de confirmación */}
         <IonModal isOpen={showModal} className="confirm-modal" onDidDismiss={() => setShowModal(false)}>
           <div className="modal-content">
             <h2>¿Confirmar rol?</h2>
