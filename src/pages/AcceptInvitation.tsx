@@ -15,7 +15,7 @@ const AcceptInvitation: React.FC = () => {
         // ✅ invitación aceptada → paciente
         history.replace("/patient");
       } catch (err: any) {
-        // 🔐 NO logueado
+        
         if (err.response?.status === 401) {
           history.replace(`/login?redirect=/accept-invitation/${token}`);
         } else {
