@@ -16,6 +16,7 @@ import PatientTabs from "./pages/patient/PatientTabs";
 import { AuthProvider } from "./context/AuthContext";
 
 import "./theme/variables.css";
+import CareMedicines from "./pages/care/CareMedicines";
 
 setupIonicReact();
 
@@ -56,10 +57,15 @@ const App: React.FC = () => {
               <Password />
             </Route>
 
+            <Route exact path="/care/medicines/:patientId">
+            <CareMedicines />
+            </Route>
+
             {/* PANTALLAS PRIVADAS */}
             <Route path="/care">
               <CareTabs />
             </Route>
+
 
             <Route path="/patient">
               <PatientTabs />
