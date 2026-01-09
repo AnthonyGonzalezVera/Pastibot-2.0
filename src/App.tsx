@@ -6,6 +6,7 @@ import Splash from "./pages/Splash";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
 import SelectRole from "./pages/SelectRole";
 import Password from "./pages/password";
 import SocialSuccess from "./pages/SocialSuccess";
@@ -44,6 +45,10 @@ const App: React.FC = () => {
               <ForgotPassword />
             </Route>
 
+            <Route exact path="/reset-password/:token">
+              <ResetPassword />
+            </Route>
+
             <Route exact path="/selectrole">
               <SelectRole />
             </Route>
@@ -58,7 +63,7 @@ const App: React.FC = () => {
             </Route>
 
             <Route exact path="/care/medicines/:patientId">
-            <CareMedicines />
+              <CareMedicines />
             </Route>
 
             {/* PANTALLAS PRIVADAS */}
